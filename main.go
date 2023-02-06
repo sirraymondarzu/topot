@@ -17,7 +17,7 @@ func main() {
 	fileServer := http.FileServer(http.Dir("./static/"))
 
 	//create url mapping to the static directory
-	//mux.Handle("/resource/", http.StripPrefix("/resource", fileServer))
+	
 	mux.Handle("/resource/", http.StripPrefix("/resource/", fileServer))
 	log.Println("Starting on port :4000")
 	err := http.ListenAndServe(":4000", mux)

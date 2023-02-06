@@ -1,0 +1,13 @@
+[1mdiff --git a/main.go b/main.go[m
+[1mindex a69b440..cf6ba55 100644[m
+[1m--- a/main.go[m
+[1m+++ b/main.go[m
+[36m@@ -17,7 +17,7 @@[m [mfunc main() {[m
+ 	fileServer := http.FileServer(http.Dir("./static/"))[m
+ [m
+ 	//create url mapping to the static directory[m
+[31m-	//mux.Handle("/resource/", http.StripPrefix("/resource", fileServer))[m
+[32m+[m[41m	[m
+ 	mux.Handle("/resource/", http.StripPrefix("/resource/", fileServer))[m
+ 	log.Println("Starting on port :4000")[m
+ 	err := http.ListenAndServe(":4000", mux)[m
