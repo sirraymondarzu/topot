@@ -1,17 +1,28 @@
 package main
 
 import (
+	"html/template"
 	"log"
 	"net/http"
+	"time"
 )
 
 func home(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Hi there! We are tapot."))
 }
 
+func displayTime(w http.ResponseWriter, r *http.Request) {
+	localtime := time.Now().Format("3:04:05 PM")
+	//read in the template file
+	ts, _ := template.ParseFiles("./ui/html/display.time.tmpl")
+	ts.Execute(w, localtime)
+
+}
+
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", home)
+	mux.HandleFunc("/time", displayTime)
 
 	//create a file server
 	fileServer := http.FileServer(http.Dir("./ui/static/"))
