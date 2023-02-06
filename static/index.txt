@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <p> Welcome to Raymond's Web server</p>
+        <div>Life is great.</div>
+        <footer>
+            <p><a href="mailto:sirraymondarzu@gmail.com"> sirraymondarzu@gmail.com</a></p>
+        </footer>
+    </body>
+</html>
