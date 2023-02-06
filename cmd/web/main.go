@@ -13,6 +13,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 
 func displayTime(w http.ResponseWriter, r *http.Request) {
 	localtime := time.Now().Format("3:04:05 PM")
+	
 	//read in the template file
 	ts, _ := template.ParseFiles("./ui/html/display.time.tmpl")
 	ts.Execute(w, localtime)
